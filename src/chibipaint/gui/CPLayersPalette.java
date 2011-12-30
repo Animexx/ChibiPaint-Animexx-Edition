@@ -44,12 +44,13 @@ public class CPLayersPalette extends CPPalette implements CPArtwork.ICPArtworkLi
 	JCheckBox cbSampleAllLayers;
 	JCheckBox cbLockAlpha;
 
-	String modeNames[] = { "Normal", "Multiply", "Add", "Screen", "Lighten", "Darken", "Subtract", "Dodge", "Burn",
-			"Overlay", "Hard Light", "Soft Light", "Vivid Light", "Linear Light", "Pin Light" };
+	String modeNames[];
 
 	public CPLayersPalette(CPController controller) {
 		super(controller);
 
+                modeNames = CPMainGUI.language.getLayerModeNames();
+                
 		title = "Layers";
 
 		// Widgets creation

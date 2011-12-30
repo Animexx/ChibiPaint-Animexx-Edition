@@ -37,7 +37,7 @@ import chibipaint.util.*;
 
 public abstract class CPController implements ActionListener {
 
-	final static String VERSION_STRING = "0.7.11.2";
+	final static String VERSION_STRING = "0.7.11.2 Animexx-Edition";
 
 	private CPColor curColor = new CPColor();
 	// int curAlpha = 255;
@@ -242,7 +242,7 @@ public abstract class CPController implements ActionListener {
 			int choice = JOptionPane
 					.showConfirmDialog(
 							getDialogParent(),
-							"You're about to clear the current Undo/Redo history.\nThis operation cannot be undone, are you sure you want to do that?",
+                                                        chibipaint.gui.CPMainGUI.language.getString("clear_memory_hint2"),
 							"Clear History", JOptionPane.OK_CANCEL_OPTION, JOptionPane.WARNING_MESSAGE);
 
 			if (choice == JOptionPane.OK_OPTION) {
@@ -318,8 +318,10 @@ public abstract class CPController implements ActionListener {
 		}
 
 		if (e.getActionCommand().equals("CPAbout")) {
-			JOptionPane.showMessageDialog(getDialogParent(), "ChibiPaint by Codexus\n" + "Version "
-					+ VERSION_STRING + "\n\n" + "Copyright (c) 2006-2008 Marc Schefer. All Rights Reserved.\n\n"
+                    if (!ChibiPaint.DEBUG.equals("")) JOptionPane.showMessageDialog(getDialogParent(), ChibiPaint.DEBUG, "Über ChibiPaint...", JOptionPane.PLAIN_MESSAGE);
+                    else
+			JOptionPane.showMessageDialog(getDialogParent(), "ChibiPaint by Codexus / Animexx\n" + "Version "
+					+ VERSION_STRING + "\n\n" + "Copyright (c) 2006-2008 Marc Schefer, 2012- Animexx e.V.. All Rights Reserved.\n\n"
 					+ "ChibiPaint is free software: you can redistribute it and/or modify\n"
 					+ "it under the terms of the GNU General Public License as published by\n"
 					+ "the Free Software Foundation, either version 3 of the License, or\n"

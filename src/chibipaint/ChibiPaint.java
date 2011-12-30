@@ -34,6 +34,8 @@ import chibipaint.gui.*;
 
 public class ChibiPaint extends JApplet {
 
+        public static String DEBUG = "";
+    
 	CPControllerApplet controller;
 	CPMainGUI mainGUI;
 
@@ -79,8 +81,11 @@ public class ChibiPaint extends JApplet {
 		controller.setTool(CPController.T_PEN);
 
 		createFloatingPlaceholder();
+                
+                String language = "en";
+                if (getParameter("guiLanguage") != null) language = getParameter("guiLanguage");
 
-		mainGUI = new CPMainGUI(controller);
+		mainGUI = new CPMainGUI(controller, language);
 
 		setContentPane(mainGUI.getGUI());
 		setJMenuBar(mainGUI.getMenuBar());

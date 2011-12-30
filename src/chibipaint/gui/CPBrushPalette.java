@@ -38,12 +38,15 @@ public class CPBrushPalette extends CPPalette implements CPController.ICPToolLis
 	CPSlider resatSlider, bleedSlider, spacingSlider, scatteringSlider, smoothingSlider;
 
 	JComboBox tipCombo;
-	String tipNames[] = { "Round Pixelated", "Round Hard Edge", "Round Soft", "Square Pixelated", "Square Hard Edge" };
+	String tipNames[];
 
 	@SuppressWarnings("serial")
 	public CPBrushPalette(CPController ctrlr) {
 		super(ctrlr);
 
+                this.tipNames = CPMainGUI.language.getBrushTipNames();
+                System.out.println(this.tipNames);
+                
 		setSize(160, 270);
 
 		title = "Brush";
@@ -90,7 +93,7 @@ public class CPBrushPalette extends CPPalette implements CPController.ICPToolLis
 			public void onValueChange() {
 				controller.getBrushInfo().resat = value / 100f;
 				controller.callToolListeners();
-				title = "Color: " + value + "%";
+				title = CPMainGUI.language.getString("palette_color") + ": " + value + "%";
 			}
 		};
 		resatSlider.setLocation(20, 145);
@@ -102,7 +105,7 @@ public class CPBrushPalette extends CPPalette implements CPController.ICPToolLis
 			public void onValueChange() {
 				controller.getBrushInfo().bleed = value / 100f;
 				controller.callToolListeners();
-				title = "Blend: " + value + "%";
+				title = CPMainGUI.language.getString("palette_blend") + ": " + value + "%";
 			}
 		};
 		bleedSlider.setLocation(20, 170);
@@ -114,7 +117,7 @@ public class CPBrushPalette extends CPPalette implements CPController.ICPToolLis
 			public void onValueChange() {
 				controller.getBrushInfo().spacing = value / 100f;
 				controller.callToolListeners();
-				title = "Spacing: " + value + "%";
+				title = CPMainGUI.language.getString("palette_spacing") + ": " + value + "%";
 			}
 		};
 		spacingSlider.setLocation(20, 195);
@@ -137,7 +140,7 @@ public class CPBrushPalette extends CPPalette implements CPController.ICPToolLis
 			public void onValueChange() {
 				controller.getBrushInfo().scattering = value / 100f;
 				controller.callToolListeners();
-				title = "Scattering: " + value + "%";
+				title = CPMainGUI.language.getString("palette_scattering") + ": " + value + "%";
 			}
 		};
 		scatteringSlider.setLocation(20, 220);
@@ -149,7 +152,7 @@ public class CPBrushPalette extends CPPalette implements CPController.ICPToolLis
 			public void onValueChange() {
 				controller.getBrushInfo().smoothing = value / 100f;
 				controller.callToolListeners();
-				title = "Smoothing: " + value + "%";
+				title = CPMainGUI.language.getString("palette_smoothing") + ": " + value + "%";
 			}
 		};
 		smoothingSlider.setLocation(20, 245);
@@ -300,7 +303,7 @@ public class CPBrushPalette extends CPPalette implements CPController.ICPToolLis
 
 		public void onValueChange() {
 			controller.setAlpha(value);
-			title = "Opacity: " + value;
+			title = CPMainGUI.language.getString("palette_opacity") + ": " + value;
 		}
 	}
 
@@ -313,7 +316,7 @@ public class CPBrushPalette extends CPPalette implements CPController.ICPToolLis
 
 		public void onValueChange() {
 			controller.setBrushSize(value);
-			title = "Brush Size: " + value;
+			title = CPMainGUI.language.getString("palette_brushsize") + ": " + value;
 		}
 	}
 

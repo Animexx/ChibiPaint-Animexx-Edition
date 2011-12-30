@@ -254,7 +254,7 @@ public class CPTexturePalette extends CPPalette {
 	}
 	
 	class CPOptionsPanel extends JPanel {
-		final static int width = 120;
+		final static int width = 150;
 		final static int height = 200;
 		final static int previewSize = 64;
 
@@ -268,7 +268,7 @@ public class CPTexturePalette extends CPPalette {
 			Box vb = Box.createVerticalBox();
 			vb.setBorder(BorderFactory.createEmptyBorder(80, 5, 5, 5));
 			
-			cbInverse = new JCheckBox("Inverse");
+			cbInverse = new JCheckBox(CPMainGUI.language.getString("palette_inverse"));
 			cbInverse.setAlignmentX(Component.LEFT_ALIGNMENT);
 			cbInverse.addActionListener( new AbstractAction() {
 				public void actionPerformed(ActionEvent e) {
@@ -278,7 +278,7 @@ public class CPTexturePalette extends CPPalette {
 			});
 			vb.add(cbInverse);
 			
-			cbMirror = new JCheckBox("Mirror");
+			cbMirror = new JCheckBox(CPMainGUI.language.getString("palette_mirror"));
 			cbMirror.setAlignmentX(Component.LEFT_ALIGNMENT);
 			cbMirror.addActionListener( new AbstractAction() {
 				public void actionPerformed(ActionEvent e) {
@@ -291,7 +291,7 @@ public class CPTexturePalette extends CPPalette {
 			slBrightness = new CPSlider(200) {
 				public void onValueChange() {
 					brightness = (value - 100) / 100f;
-					title = "Brightness: " + (value - 100) + "%";
+					title = CPMainGUI.language.getString("palette_brightness") + ": " + (value - 100) + "%";
 					processTexture();
 				}
 			};
@@ -308,7 +308,7 @@ public class CPTexturePalette extends CPPalette {
 			slContrast = new CPSlider(200) {
 				public void onValueChange() {
 					contrast = (value - 100) / 100f;
-					title = "Contrast: " + (value - 100) + "%";
+					title = CPMainGUI.language.getString("palette_contrast") + ": " + (value - 100) + "%";
 					processTexture();
 				}
 			};
@@ -321,7 +321,7 @@ public class CPTexturePalette extends CPPalette {
 			b.setBorder(BorderFactory.createEmptyBorder(5, 5, 5, 5));
 			vb.add(b);
 			
-			JButton resetButton = new JButton("reset");
+			JButton resetButton = new JButton(CPMainGUI.language.getString("palette_reset"));
 			resetButton.setPreferredSize(new Dimension(40, 16));
 			resetButton.addActionListener(new AbstractAction() {
 				public void actionPerformed(ActionEvent e) {

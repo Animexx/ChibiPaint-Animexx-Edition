@@ -32,16 +32,16 @@ public class ChibiApp extends JFrame {
 	CPMainGUI mainGUI;
 
 	public ChibiApp() {
-		super("ChibiPaint");
+		super("ChibiPaint (Animexx-Edition)");
 
 		controller = new CPControllerApplication(this);
 
-		controller.setArtwork(new CPArtwork(600, 450));
+		controller.setArtwork(new CPArtwork(400, 300));
 
 		// FIXME: set a default tool so that we can start drawing
 		controller.setTool(CPController.T_PEN);
 
-		mainGUI = new CPMainGUI(controller);
+		mainGUI = new CPMainGUI(controller, "en");
 
 		setContentPane(mainGUI.getGUI());
 		setJMenuBar(mainGUI.getMenuBar());
@@ -51,7 +51,7 @@ public class ChibiApp extends JFrame {
 		JFrame frame = new ChibiApp();
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
-		frame.setSize(800, 600);
+		frame.setSize(1000, 758);
 		frame.validate();
 		frame.setVisible(true);
 	}

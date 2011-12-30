@@ -43,6 +43,7 @@ public class CPToolPalette extends CPPalette implements ActionListener {
 		button.addCPActionListener(controller);
 		button.addCPActionListener(this);
 		button.setCPActionCommand("CPRectSelection");
+                button.setToolTipText(CPMainGUI.language.getString("tool_tip_rect"));
 
 		button = new CPIconButton(icons, 32, 32, 1, 1);
 		add(button);
@@ -50,6 +51,7 @@ public class CPToolPalette extends CPPalette implements ActionListener {
 		button.addCPActionListener(controller);
 		button.addCPActionListener(this);
 		button.setCPActionCommand("CPMoveTool");
+                button.setToolTipText(CPMainGUI.language.getString("tool_tip_move"));
 
 		button = new CPIconButton(icons, 32, 32, 2, 1);
 		add(button);
@@ -57,6 +59,7 @@ public class CPToolPalette extends CPPalette implements ActionListener {
 		button.addCPActionListener(controller);
 		button.addCPActionListener(this);
 		button.setCPActionCommand("CPFloodFill");
+                button.setToolTipText(CPMainGUI.language.getString("tool_tip_fill"));
 
 		button = new CPIconButton(icons, 32, 32, 29, 1);
 		add(button);
@@ -65,6 +68,7 @@ public class CPToolPalette extends CPPalette implements ActionListener {
 		button.addCPActionListener(this);
 		button.setCPActionCommand("CPRotateCanvas");
 		button.setCPActionCommandDouble("CPResetCanvasRotation");
+                button.setToolTipText(CPMainGUI.language.getString("tool_tip_rotate"));
 
 		button = new CPIconButton(icons, 32, 32, 5, 1);
 		add(button);
@@ -72,6 +76,7 @@ public class CPToolPalette extends CPPalette implements ActionListener {
 		button.addCPActionListener(controller);
 		button.addCPActionListener(this);
 		button.setCPActionCommand("CPPencil");
+                button.setToolTipText(CPMainGUI.language.getString("tool_tip_pencil"));
 
 		button = new CPIconButton(icons, 32, 32, 6, 1);
 		add(button);
@@ -80,6 +85,7 @@ public class CPToolPalette extends CPPalette implements ActionListener {
 		button.addCPActionListener(this);
 		button.setCPActionCommand("CPPen");
 		button.setSelected(true);
+                button.setToolTipText(CPMainGUI.language.getString("tool_tip_pen"));
 
 		button = new CPIconButton(icons, 32, 32, 7, 1);
 		add(button);
@@ -87,6 +93,7 @@ public class CPToolPalette extends CPPalette implements ActionListener {
 		button.addCPActionListener(controller);
 		button.addCPActionListener(this);
 		button.setCPActionCommand("CPAirbrush");
+                button.setToolTipText(CPMainGUI.language.getString("tool_tip_airbrush"));
 
 		button = new CPIconButton(icons, 32, 32, 18, 1);
 		add(button);
@@ -94,6 +101,7 @@ public class CPToolPalette extends CPPalette implements ActionListener {
 		button.addCPActionListener(controller);
 		button.addCPActionListener(this);
 		button.setCPActionCommand("CPWater");
+                button.setToolTipText(CPMainGUI.language.getString("tool_tip_watercolor"));
 
 		button = new CPIconButton(icons, 32, 32, 8, 1);
 		add(button);
@@ -101,6 +109,7 @@ public class CPToolPalette extends CPPalette implements ActionListener {
 		button.addCPActionListener(controller);
 		button.addCPActionListener(this);
 		button.setCPActionCommand("CPEraser");
+                button.setToolTipText(CPMainGUI.language.getString("tool_tip_eraser"));
 
 		button = new CPIconButton(icons, 32, 32, 9, 1);
 		add(button);
@@ -108,6 +117,7 @@ public class CPToolPalette extends CPPalette implements ActionListener {
 		button.addCPActionListener(controller);
 		button.addCPActionListener(this);
 		button.setCPActionCommand("CPSoftEraser");
+                button.setToolTipText(CPMainGUI.language.getString("tool_tip_eraser_soft"));
 
 		button = new CPIconButton(icons, 32, 32, 24, 1);
 		add(button);
@@ -115,6 +125,7 @@ public class CPToolPalette extends CPPalette implements ActionListener {
 		button.addCPActionListener(controller);
 		button.addCPActionListener(this);
 		button.setCPActionCommand("CPSmudge");
+                button.setToolTipText(CPMainGUI.language.getString("tool_tip_smudge"));
 
 		button = new CPIconButton(icons, 32, 32, 28, 1);
 		add(button);
@@ -122,6 +133,7 @@ public class CPToolPalette extends CPPalette implements ActionListener {
 		button.addCPActionListener(controller);
 		button.addCPActionListener(this);
 		button.setCPActionCommand("CPBlender");
+                button.setToolTipText(CPMainGUI.language.getString("tool_tip_blender"));
 
 		button = new CPIconButton(icons, 32, 32, 16, 1);
 		add(button);
@@ -129,6 +141,7 @@ public class CPToolPalette extends CPPalette implements ActionListener {
 		button.addCPActionListener(controller);
 		button.addCPActionListener(this);
 		button.setCPActionCommand("CPDodge");
+                button.setToolTipText(CPMainGUI.language.getString("tool_tip_dodge"));
 
 		button = new CPIconButton(icons, 32, 32, 17, 1);
 		add(button);
@@ -136,6 +149,7 @@ public class CPToolPalette extends CPPalette implements ActionListener {
 		button.addCPActionListener(controller);
 		button.addCPActionListener(this);
 		button.setCPActionCommand("CPBurn");
+                button.setToolTipText(CPMainGUI.language.getString("tool_tip_burn"));
 
 		button = new CPIconButton(icons, 32, 32, 23, 1);
 		add(button);
@@ -143,6 +157,7 @@ public class CPToolPalette extends CPPalette implements ActionListener {
 		button.addCPActionListener(controller);
 		button.addCPActionListener(this);
 		button.setCPActionCommand("CPBlur");
+                button.setToolTipText(CPMainGUI.language.getString("tool_tip_blur"));
 
 	}
 

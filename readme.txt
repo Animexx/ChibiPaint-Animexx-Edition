@@ -1,6 +1,29 @@
     ChibiPaint
 
+    Original version of ChibiPaint:
     Copyright (c) 2006-2008 Marc Schefer
+    http://www.chibipaint.com/
+
+    German translation and minor modifications:
+    Copyright (c) 2012 Animexx e.V. / Tobias Hößl
+    https://github.com/CatoTH/ChibiPaint-Animexx-Edition
+
+
+    Some icons taken from the GNU Image Manipulation Program.
+    Art contributors: http://git.gnome.org/browse/gimp/tree/AUTHORS
+      Lapo Calamandrei
+      Paul Davey
+      Alexia Death
+      Aurore Derriennic
+      Tuomas Kuosmanen
+      Karl La Rocca
+      Andreas Nilsson
+      Ville Pätsi
+      Mike Schaeffer
+      Carol Spears
+      Jakub Steiner
+      William Szilveszter    
+
 
     This file is part of ChibiPaint.
 
@@ -38,6 +61,7 @@
       <param name="postUrl" value="http://yourserver/oekaki/cpget.php" />
       <param name="exitUrl" value="http://yourserver/oekaki/" />
       <param name="exitUrlTarget" value="_self" />
+      <param name="language" value="de" />
       <param name="loadImage" value="http://yourserver/oekaki/pictures/168.png" />
       <param name="loadChibiFile" value="http://yourserver/oekaki/pictures/168.chi" />
       JAVA NOT SUPPORTED! <!-- alternative content for users who don't have Java installed -->
@@ -50,6 +74,8 @@
   postUrl - url that will be used to post the resulting files (see below for more details)
   exitUrl - after sending the oekaki the user will be redirected to that url
   exitUrlTarget - optional target to allow different frames configuration
+
+  language - the language of the GUI. Currently only "en" (english; default) and "de" (german) are supported
   
   loadImage - an image (png format) that will be loaded in the applet to be edited
   loadChibiFile - a chibifile format (.chi) multi-layer image that will be loaded in the applet to be edited

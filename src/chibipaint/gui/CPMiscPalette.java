@@ -43,16 +43,19 @@ public class CPMiscPalette extends CPPalette {
 		add(button);
 		button.addCPActionListener(controller);
 		button.setCPActionCommand("CPZoomIn");
+                button.setToolTipText(CPMainGUI.language.getString("zoom_in"));
 
 		button = new CPIconButton(icons, 32, 32, 14, 1);
 		add(button);
 		button.addCPActionListener(controller);
 		button.setCPActionCommand("CPZoomOut");
+                button.setToolTipText(CPMainGUI.language.getString("zoom_out"));
 
 		button = new CPIconButton(icons, 32, 32, 15, 1);
 		add(button);
 		button.addCPActionListener(controller);
 		button.setCPActionCommand("CPZoom100");
+                button.setToolTipText(CPMainGUI.language.getString("zoom_100_hint"));
 
 		spacer = new JPanel();
 		spacer.setSize(16, 32);
@@ -62,11 +65,13 @@ public class CPMiscPalette extends CPPalette {
 		add(button);
 		button.addCPActionListener(controller);
 		button.setCPActionCommand("CPUndo");
+                button.setToolTipText(CPMainGUI.language.getString("undo"));
 
 		button = new CPIconButton(icons, 32, 32, 11, 1);
 		add(button);
 		button.addCPActionListener(controller);
 		button.setCPActionCommand("CPRedo");
+                button.setToolTipText(CPMainGUI.language.getString("redo"));
 
 		if (controller.isRunningAsApplet()) {
 			spacer = new JPanel();

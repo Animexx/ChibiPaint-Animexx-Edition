@@ -537,7 +537,7 @@ public class CPCanvas extends JComponent implements MouseListener, MouseMotionLi
 	public void centerCanvas() {
 		Dimension d = getSize();
 		setOffset((d.width - (int) (artwork.width * getZoom())) / 2,
-				(d.height - (int) (artwork.height * getZoom())) / 2);
+				(d.height - (int) (artwork.height * getZoom())) / 3);
 		repaint();
 	}
 

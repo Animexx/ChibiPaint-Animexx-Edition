@@ -30,6 +30,7 @@ import java.net.*;
 import javax.swing.*;
 
 import chibipaint.engine.*;
+import chibipaint.gui.CPMainGUI;
 
 public class CPControllerApplet extends CPController {
 
@@ -94,20 +95,15 @@ public class CPControllerApplet extends CPController {
 		byte[] chibiData = chibiFileStream.toByteArray();
 
 		boolean sendLayers;
+                String text = CPMainGUI.language.getString("send_size_string")
+                        .replace("%chi_size%", (new Integer(chibiData.length / 1024)).toString())
+                        .replace("%total_size%", (new Integer((chibiData.length + pngData.length) / 1024)).toString())
+                        ;
 		int choice = JOptionPane
 				.showConfirmDialog(
 						getDialogParent(),
-						"You're about to send your oekaki to the server and end your ChibiPaint session.\n\nWould you like to send the layers file as well?\nAdditional upload size: "
-								+ chibiData.length
-								/ 1024
-								+ " KB \nTotal upload size:"
-								+ (chibiData.length + pngData.length)
-								/ 1024
-								+ " KB\n\nThe layers file allows you to edit your oekaki later with all its layers intact\n\n"
-								+ "Choose 'Yes' to send both files. (recommended)\n"
-								+ "Choose 'No' to send the finished picture only.\n"
-								+ "Choose 'Cancel' if you wish to continue editing your picture without sending it.\n\n",
-						"Send Oekaki", JOptionPane.YES_NO_CANCEL_OPTION, JOptionPane.QUESTION_MESSAGE);
+						text, CPMainGUI.language.getString("send_string"),
+						JOptionPane.YES_NO_CANCEL_OPTION, JOptionPane.QUESTION_MESSAGE);
 
 		if (choice == JOptionPane.YES_OPTION) {
 			sendLayers = true;
