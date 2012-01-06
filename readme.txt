@@ -92,6 +92,8 @@
   
   The form data name for the png file is 'picture' and 'chibifile' for the multilayer file. The recommended extension
   for chibifiles is '.chi'
+
+  The editing time in seconds is sent in the variable $_GET["edit_time"].
   
   The applet expects the server to answer with the single line reply "CHIBIOK" followed by a newline character.
   

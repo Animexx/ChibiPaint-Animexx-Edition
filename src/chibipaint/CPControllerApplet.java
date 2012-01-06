@@ -114,7 +114,12 @@ public class CPControllerApplet extends CPController {
 		}
 
 		try {
-			URL url = new URL(applet.getDocumentBase(), postUrl);
+                        String url_with_time = postUrl;
+                        if (url_with_time.charAt('?') == -1) url_with_time += "?";
+                        else url_with_time += "&";
+                        url_with_time += "edit_time=" + this.getEditingTime();
+                                
+			URL url = new URL(applet.getDocumentBase(), url_with_time);
 			// new CPMessageBox(this, CPMessageBox.CP_OK_MSGBOX, url.toString()+" / "+url.getHost()+" / "+url.getFile(),
 			// "debug");
 

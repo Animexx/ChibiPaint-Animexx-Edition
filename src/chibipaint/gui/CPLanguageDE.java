@@ -117,6 +117,10 @@ public class CPLanguageDE extends CPLanguage {
         language.put("tool_tip_burn", "Abdunkeln");
         language.put("tool_tip_blur", "Weichzeichnen");
         
+        language.put("status_edit_time", "Zeit");
+        language.put("status_edit_mem", "Mem");
+        language.put("status_edit_zoom", "Zoom");
+
         language.put("send_size_string", "Hiermit lädst du das Oekaki hoch und beendest dieses Zeichenprogramm.\n\n"
                 + "Soll auch die ChibiPaint-Datei mit den Ebenen hochgeladen werden?\n"
                 + "Die Datenmenge erhöht sich dadurch um %chi_size% KB \n"

@@ -91,6 +91,8 @@ public class ChibiPaint extends JApplet {
 		setJMenuBar(mainGUI.getMenuBar());
 
 		validate(); // calling validate is recommended to ensure compatibility
+                
+                controller.editingStarted();
 	}
 
 	private CPArtwork createArtwork() {

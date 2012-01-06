@@ -117,6 +117,11 @@ public class CPLanguageEN extends CPLanguage {
         language.put("tool_tip_burn", "Burn");
         language.put("tool_tip_blur", "Blur");
         
+        language.put("status_edit_time", "Time");
+        language.put("status_edit_mem", "Mem");
+        language.put("status_edit_zoom", "Zoom");
+        
+        
         language.put("send_size_string", "You're about to send your oekaki to the server and end your ChibiPaint session.\n\nWould you like to send the layers file as well?\n"
                 + "Additional upload size: %chi_size% KB \n"
                 + "Total upload size: %total_size%  KB\n\nThe layers file allows you to edit your oekaki later with all its layers intact\n\n"

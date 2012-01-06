@@ -45,6 +45,8 @@ public class ChibiApp extends JFrame {
 
 		setContentPane(mainGUI.getGUI());
 		setJMenuBar(mainGUI.getMenuBar());
+                
+                controller.editingStarted();
 	}
 
 	private static void createChibiApp() {

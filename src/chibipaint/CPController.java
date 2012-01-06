@@ -46,6 +46,8 @@ public abstract class CPController implements ActionListener {
 	// some important object references
 	public CPArtwork artwork;
 	public CPCanvas canvas;
+        
+        public Date edit_start_time;
 
 	CPBrushInfo[] tools;
 	int curBrush = T_PENCIL;
@@ -147,6 +149,16 @@ public abstract class CPController implements ActionListener {
 				CPBrushInfo.B_ROUND_AIRBRUSH, CPBrushInfo.M_OIL, 0f, .07f);
 	}
 
+        public void editingStarted() {
+                this.edit_start_time = new Date();
+
+        }
+        
+        public int getEditingTime() {
+            long diff = (new Date().getTime() - this.edit_start_time.getTime());
+            return (int)Math.ceil(diff / 1000);
+        }
+        
 	public void setArtwork(CPArtwork artwork) {
 		this.artwork = artwork;
 	}

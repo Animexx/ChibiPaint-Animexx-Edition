@@ -29,21 +29,27 @@ import javax.swing.*;
 
 import chibipaint.*;
 import chibipaint.engine.*;
+import javax.swing.border.Border;
 
 public class CPStatusBar extends JPanel implements CPController.ICPViewListener, CPController.ICPEventListener {
 
 	CPController controller;
-	JLabel memory, zoom;
+	JLabel memory, zoom, editing_time;
 
 	public CPStatusBar(CPController controller) {
 		super(new BorderLayout());
 		this.controller = controller;
 
-		zoom = new JLabel("Zoom: 100%");
-		add(zoom, BorderLayout.LINE_START);
+                editing_time = new JLabel(CPMainGUI.language.getString("status_edit_time") + ": 0:00");
+                editing_time.setHorizontalAlignment(JLabel.CENTER);
+                add(editing_time, BorderLayout.CENTER);
 
+		zoom = new JLabel(CPMainGUI.language.getString("status_edit_zoom") + ": 100%");
+		add(zoom, BorderLayout.WEST);
+                
 		memory = new JLabel("");
-		add(memory, BorderLayout.LINE_END);
+		add(memory, BorderLayout.EAST);
+                
 		memory.addMouseListener(new MouseAdapter() {
 
 			public void mouseClicked(MouseEvent e) {
@@ -53,15 +59,16 @@ public class CPStatusBar extends JPanel implements CPController.ICPViewListener,
 				}
 			}
 		});
-
+                
 		updateMemory();
 		controller.addViewListener(this);
 		// controller.addCPEventListener(this);
 
-		Timer timer = new Timer(2000, new ActionListener() {
+		Timer timer = new Timer(1000, new ActionListener() {
 
 			public void actionPerformed(ActionEvent e) {
 				updateMemory();
+                                updateEditTime();
 			}
 		});
 		timer.setRepeats(true);
@@ -70,9 +77,19 @@ public class CPStatusBar extends JPanel implements CPController.ICPViewListener,
 
 	public void viewChange(CPController.CPViewInfo viewInfo) {
 		DecimalFormat format = new DecimalFormat("0.0%");
-		zoom.setText("Zoom: " + format.format(viewInfo.zoom));
+		zoom.setText(CPMainGUI.language.getString("status_edit_zoom") + ": " + format.format(viewInfo.zoom));
 	}
 
+        public void updateEditTime() {
+            int seconds = controller.getEditingTime();
+            String display = CPMainGUI.language.getString("status_edit_time") + ": ";
+            Integer display_minutes = (int)Math.floor(seconds / 60);
+            Integer display_seconds = (int)(seconds % 60);
+            display += display_minutes.toString() + ":";
+            if (display_seconds >= 10) display += display_seconds.toString();
+            else display += "0" + display_seconds.toString();
+            editing_time.setText(display);
+        }
 	public void updateMemory() {
 		DecimalFormat format = new DecimalFormat("0.0");
 
@@ -93,8 +110,11 @@ public class CPStatusBar extends JPanel implements CPController.ICPViewListener,
 		} else {
 			memory.setForeground(Color.BLACK);
 		}
+                String zerofiller = "";
+                if (totalUsed < 10) zerofiller = "0";
 
-		memory.setText("Mem: " + format.format(totalUsed) + "/" + format.format(maxMemory) + ",D"
+		memory.setText(CPMainGUI.language.getString("status_edit_mem") +
+                        ": " + zerofiller + format.format(totalUsed) + "/" + format.format(maxMemory) + ",D"
 				+ format.format(docMem) + " U" + format.format(undoMem));
 	}
 
