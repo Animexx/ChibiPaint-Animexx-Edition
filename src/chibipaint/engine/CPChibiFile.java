@@ -130,7 +130,7 @@ public class CPChibiFile {
 				return null; // the file version is higher than what we can deal with, bail out
 			}
 
-			CPArtwork a = new CPArtwork(header.width, header.height);
+			CPArtwork a = new CPArtwork(header.width, header.height, 0xFFFFFFFF);
 			a.layers.remove(0); // FIXME: it would be better not to have created it in the first place
 
 			while (true) {

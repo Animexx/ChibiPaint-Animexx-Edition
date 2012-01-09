@@ -36,7 +36,7 @@ public class ChibiApp extends JFrame {
 
 		controller = new CPControllerApplication(this);
 
-		controller.setArtwork(new CPArtwork(400, 300));
+		controller.setArtwork(new CPArtwork(400, 300, 0xFFFFFFFF));
 
 		// FIXME: set a default tool so that we can start drawing
 		controller.setTool(CPController.T_PEN);

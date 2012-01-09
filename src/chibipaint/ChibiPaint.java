@@ -144,7 +144,9 @@ public class ChibiPaint extends JApplet {
 		h = Math.max(1, Math.min(1024, h));
 
 		if (artwork == null) {
-			artwork = new CPArtwork(w, h);
+                    if (getParameter("backgroundColor") != null)
+                        artwork = new CPArtwork(w, h, (int)Long.parseLong(getParameter("backgroundColor"), 16));
+                    else artwork = new CPArtwork(w, h, 0xFFFFFFFF);
 		}
 
 		if (loadImage != null) {

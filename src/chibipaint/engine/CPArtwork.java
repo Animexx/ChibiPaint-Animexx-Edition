@@ -98,7 +98,7 @@ public class CPArtwork {
 	static final int BLUR_MIN = 64;
 	static final int BLUR_MAX = 1;
 
-	public CPArtwork(int width, int height) {
+	public CPArtwork(int width, int height, int background_color) {
 		this.width = width;
 		this.height = height;
 
@@ -106,7 +106,7 @@ public class CPArtwork {
 
 		CPLayer defaultLayer = new CPLayer(width, height);
 		defaultLayer.name = getDefaultLayerName();
-		defaultLayer.clear(0xffffffff);
+		defaultLayer.clear(background_color);
 		layers.add(defaultLayer);
 
 		curLayer = layers.get(0);

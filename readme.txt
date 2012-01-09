@@ -58,6 +58,7 @@
     <applet archive="chibipaint.jar" code="chibipaint.ChibiPaint.class" width="800" height="600">
       <param name="canvasWidth" value="400" />
       <param name="canvasHeight" value="300" />
+      <param name="backgroundColor" value="FFFFFFFF" />
       <param name="postUrl" value="http://yourserver/oekaki/cpget.php" />
       <param name="exitUrl" value="http://yourserver/oekaki/" />
       <param name="exitUrlTarget" value="_self" />
@@ -70,6 +71,7 @@
   The parameters are:
   canvasWidth - width of the area on which users can draw (currently capped to 1024)
   canvasHeight - height of the area on which users can draw (currently capped to 1024)
+  backgroundColor - initial background color of the canvas. Format: AARRGGBB. Default: FFFFFFFF (white, fully opaque)
   
   postUrl - url that will be used to post the resulting files (see below for more details)
   exitUrl - after sending the oekaki the user will be redirected to that url
