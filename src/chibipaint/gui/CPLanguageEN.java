@@ -121,6 +121,8 @@ public class CPLanguageEN extends CPLanguage {
         language.put("status_edit_mem", "Mem");
         language.put("status_edit_zoom", "Zoom");
         
+        language.put("sample_all_layers", "Sample All Layers");
+        language.put("lock_alpha", "Lock Alpha");
         
         language.put("send_size_string", "You're about to send your oekaki to the server and end your ChibiPaint session.\n\nWould you like to send the layers file as well?\n"
                 + "Additional upload size: %chi_size% KB \n"

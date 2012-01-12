@@ -35,7 +35,7 @@ public class CPLanguageDE extends CPLanguage {
         language.put("clear_memory_hint2", "Dieser Aufruf löscht alle Daten, um die vorigen Arbeitsschritte rückgängig zu machen. Sicher?");
         language.put("cut", "Ausschneiden");
         language.put("copy", "Kopieren");
-        language.put("copy_merged", "Copy Merged [??]");
+        language.put("copy_merged", "Sichtbare Auswahl kopieren");
         language.put("paste", "Einfügen");
         language.put("select_all", "Alles auswählen");
         language.put("select_all_hint", "Die gesamte Zeichenfläche auswählen");
@@ -88,11 +88,11 @@ public class CPLanguageDE extends CPLanguage {
         language.put("show_color", "Zeige Farbmischpult");
         
         language.put("palette_color", "Farbe");
-        language.put("palette_blend", "Blend [???]");
+        language.put("palette_blend", "Vermischen");
         language.put("palette_brushsize", "Pinselgröße");
         language.put("palette_opacity", "Deckkraft");
         language.put("palette_smoothing", "Kantenglättung");
-        language.put("palette_scattering", "Scattering [??]");
+        language.put("palette_scattering", "Streuung");
         language.put("palette_spacing", "Abstände");
         
         language.put("palette_inverse", "Invertieren");
@@ -121,6 +121,9 @@ public class CPLanguageDE extends CPLanguage {
         language.put("status_edit_mem", "Mem");
         language.put("status_edit_zoom", "Zoom");
 
+        language.put("sample_all_layers", "Alle Ebenen einbeziehen");
+        language.put("lock_alpha", "Transparenz schützen");
+        
         language.put("send_size_string", "Hiermit lädst du das Oekaki hoch und beendest dieses Zeichenprogramm.\n\n"
                 + "Soll auch die ChibiPaint-Datei mit den Ebenen hochgeladen werden?\n"
                 + "Die Datenmenge erhöht sich dadurch um %chi_size% KB \n"
@@ -150,8 +153,8 @@ public class CPLanguageDE extends CPLanguage {
 
     @Override
     public String[] getLayerModeNames() {
-        String[] x = { "Normal", "Multiply", "Add", "Screen", "Lighten", "Darken", "Subtract", "Dodge", "Burn",
-			"Overlay", "Hard Light", "Soft Light", "Vivid Light", "Linear Light", "Pin Light" };
+        String[] x = { "Normal", "Multiplizieren", "Addition", "Abblenden", "Aufhellen", "Abdunkeln", "Differenz", "Abwedeln",
+            "Nachbelichten", "Überlagern", "Hartes Licht", "Weiches Licht", "Strahlendes Licht", "Lineares Licht", "Lichtpunkte" };
         return x;
     }
     

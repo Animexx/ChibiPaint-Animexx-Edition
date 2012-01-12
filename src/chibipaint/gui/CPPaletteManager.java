@@ -106,7 +106,7 @@ public class CPPaletteManager implements ContainerListener {
 		paletteFrames.add(frame);
 
 		frame.pack();
-		frame.setLocation(810, 3);
+		frame.setLocation(780, 3);
 		desktop.add(frame);
 
 		// Layers Palette
@@ -118,8 +118,8 @@ public class CPPaletteManager implements ContainerListener {
 		paletteFrames.add(frame);
 
 		frame.pack();
-		frame.setSize(170, 300);
-		frame.setLocation(810, 380);
+		frame.setSize(200, 300);
+		frame.setLocation(780, 380);
 		desktop.add(frame);
 
 		// Stroke Palette
@@ -183,7 +183,7 @@ public class CPPaletteManager implements ContainerListener {
 
 		frame.pack();
 		frame.setSize(400, 220);
-		frame.setLocation(390, 460);
+		frame.setLocation(360, 460);
 		desktop.add(frame);
 	}
 

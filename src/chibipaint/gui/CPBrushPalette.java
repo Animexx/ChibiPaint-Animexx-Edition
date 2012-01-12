@@ -45,9 +45,8 @@ public class CPBrushPalette extends CPPalette implements CPController.ICPToolLis
 		super(ctrlr);
 
                 this.tipNames = CPMainGUI.language.getBrushTipNames();
-                System.out.println(this.tipNames);
                 
-		setSize(160, 270);
+		setSize(200, 270);
 
 		title = "Brush";
 		// setBounds(getInnerDimensions());
@@ -56,7 +55,7 @@ public class CPBrushPalette extends CPPalette implements CPController.ICPToolLis
 
 		alphaSlider = new CPAlphaSlider();
 		alphaSlider.setLocation(20, 120);
-		alphaSlider.setSize(130, 16);
+		alphaSlider.setSize(170, 16);
 		add(alphaSlider);
 
 		CPBrushPreview brushPreview = new CPBrushPreview();
@@ -74,7 +73,7 @@ public class CPBrushPalette extends CPPalette implements CPController.ICPToolLis
 
 		sizeSlider = new CPSizeSlider();
 		sizeSlider.setLocation(20, 95);
-		sizeSlider.setSize(130, 16);
+		sizeSlider.setSize(170, 16);
 		add(sizeSlider);
 
 		sizeCB = new CPSizeCB();
@@ -85,7 +84,7 @@ public class CPBrushPalette extends CPPalette implements CPController.ICPToolLis
 		tipCombo = new JComboBox(tipNames);
 		tipCombo.addActionListener(this);
 		tipCombo.setLocation(5, 5);
-		tipCombo.setSize(120, 16);
+		tipCombo.setSize(190, 16);
 		add(tipCombo);
 
 		resatSlider = new CPSlider(100) {
@@ -97,7 +96,7 @@ public class CPBrushPalette extends CPPalette implements CPController.ICPToolLis
 			}
 		};
 		resatSlider.setLocation(20, 145);
-		resatSlider.setSize(130, 16);
+		resatSlider.setSize(170, 16);
 		add(resatSlider);
 
 		bleedSlider = new CPSlider(100) {
@@ -109,7 +108,7 @@ public class CPBrushPalette extends CPPalette implements CPController.ICPToolLis
 			}
 		};
 		bleedSlider.setLocation(20, 170);
-		bleedSlider.setSize(130, 16);
+		bleedSlider.setSize(170, 16);
 		add(bleedSlider);
 
 		spacingSlider = new CPSlider(100) {
@@ -121,7 +120,7 @@ public class CPBrushPalette extends CPPalette implements CPController.ICPToolLis
 			}
 		};
 		spacingSlider.setLocation(20, 195);
-		spacingSlider.setSize(130, 16);
+		spacingSlider.setSize(170, 16);
 		add(spacingSlider);
 
 		scatteringCB = new CPCheckBox() {
@@ -144,7 +143,7 @@ public class CPBrushPalette extends CPPalette implements CPController.ICPToolLis
 			}
 		};
 		scatteringSlider.setLocation(20, 220);
-		scatteringSlider.setSize(130, 16);
+		scatteringSlider.setSize(170, 16);
 		add(scatteringSlider);
 
 		smoothingSlider = new CPSlider(100) {
@@ -156,7 +155,7 @@ public class CPBrushPalette extends CPPalette implements CPController.ICPToolLis
 			}
 		};
 		smoothingSlider.setLocation(20, 245);
-		smoothingSlider.setSize(130, 16);
+		smoothingSlider.setSize(170, 16);
 		add(smoothingSlider);
 
 		alphaSlider.setValue(ctrlr.getAlpha());

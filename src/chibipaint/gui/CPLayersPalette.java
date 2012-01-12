@@ -75,10 +75,10 @@ public class CPLayersPalette extends CPPalette implements CPArtwork.ICPArtworkLi
 		lw.add(renameField);
 		sp = new JScrollPane(lw);
 
-		cbSampleAllLayers = new JCheckBox("Sample All Layers");
+		cbSampleAllLayers = new JCheckBox(CPMainGUI.language.getString("sample_all_layers"));
 		cbSampleAllLayers.addItemListener(this);
 
-		cbLockAlpha = new JCheckBox("Lock Alpha");
+		cbLockAlpha = new JCheckBox(CPMainGUI.language.getString("lock_alpha"));
 		cbLockAlpha.addItemListener(this);
 
 		// Layout
@@ -92,7 +92,7 @@ public class CPLayersPalette extends CPPalette implements CPArtwork.ICPArtworkLi
 		hb.add(Box.createHorizontalGlue());
 
 		// blend mode
-		blendCombo.setPreferredSize(new Dimension(100, 16));
+		blendCombo.setPreferredSize(new Dimension(150, 16));
 
 		Box hb2 = Box.createHorizontalBox();
 		hb2.setBorder(BorderFactory.createEmptyBorder(5, 5, 5, 5));
